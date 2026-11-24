@@ -24,6 +24,7 @@ def main() -> None:
     text = ENTRY.strip()
     assert 1 <= len(text) <= MAX_CHARS, f"entry is {len(text)} chars"
     assert text.count(".") == 1, "entry must be a single sentence"
+    assert text.endswith("."), "entry must end with a period"
     out_dir = "/output"
     os.makedirs(out_dir, exist_ok=True)
     with open(os.path.join(out_dir, "entry.txt"), "w", encoding="utf-8") as f:
